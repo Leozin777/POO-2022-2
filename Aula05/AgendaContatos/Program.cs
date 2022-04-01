@@ -1,4 +1,6 @@
 ﻿using System;
+using AgendaContatos.Controllers;
+using AgendaContatos.Services;
 
 namespace AgendaContatos
 {
@@ -7,6 +9,10 @@ namespace AgendaContatos
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            ContactController control = new ContactController();
+
+            control.Menu();
         }
     }
 }
