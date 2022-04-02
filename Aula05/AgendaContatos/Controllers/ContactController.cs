@@ -15,6 +15,8 @@ namespace AgendaContatos.Controllers
             while (operador != "0")
             {
                 Console.WriteLine("Digite 1 para adicionar contato");
+                Console.WriteLine("Digite 2 para listar contatos");
+
                 Console.WriteLine("Digite 0 para sair da aplicação");
                 operador = Console.ReadLine();
 
@@ -33,6 +35,9 @@ namespace AgendaContatos.Controllers
                         string ret = service.Create(name, phone);
 
                         Console.WriteLine(ret);
+                        break;
+                    case "2":
+                        Console.WriteLine(service.ListContacts());
                         break;
                     default:
                         Console.WriteLine("invalido");
