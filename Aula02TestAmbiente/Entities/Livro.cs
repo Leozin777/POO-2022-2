@@ -27,6 +27,9 @@ namespace Aula02TestAmbiente.Entities
             return this.titulo;
         }
         public decimal Valor { get; set; }
+
+        
+        
         public decimal GetValor()
         {   
             return this.valor;
