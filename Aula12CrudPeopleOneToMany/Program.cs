@@ -1,4 +1,5 @@
 using Aula11CrudPeople.Models.Repositories;
+using Aula12CrudPeopleOneToMany.Models.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<DataContext>(
                 x=>x.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IPersonRepository,PersonRepository>();
+builder.Services.AddScoped<ICityRepository,CityRepository>();
 
 var app = builder.Build();
 
