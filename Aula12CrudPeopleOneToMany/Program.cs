@@ -15,6 +15,8 @@ builder.Services.AddDbContext<DataContext>(
                 x=>x.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IPersonRepository,PersonRepository>();
 builder.Services.AddScoped<ICityRepository,CityRepository>();
+builder.Services.AddScoped<IAddressRepository,AddressRepository>();
+
 
 var app = builder.Build();
 

@@ -6,6 +6,6 @@ namespace Aula11CrudPeople.Models.Repositories
 {
     public interface IPersonRepository : IBaseRepository<Person>
     {
-      
+
     }
 }

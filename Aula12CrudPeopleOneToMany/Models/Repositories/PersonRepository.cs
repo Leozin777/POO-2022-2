@@ -17,7 +17,7 @@ namespace Aula11CrudPeople.Models.Repositories
             if(person.City.Id>0)
                 person.City = 
                 context.Cities
-                    .SingleOrDefault(x=>x.Id == person.City.Id &&);
+                    .SingleOrDefault(x=>x.Id == person.City.Id);
             
             context.Add(person);
             context.SaveChanges();
@@ -25,7 +25,8 @@ namespace Aula11CrudPeople.Models.Repositories
 
         public void Delete(int id)
         {
-            throw new System.NotImplementedException();
+            context.People.Remove(GetById(id));
+            context.SaveChanges();
         }
 
         public List<Person> GetAll()
@@ -37,12 +38,12 @@ namespace Aula11CrudPeople.Models.Repositories
         public Person GetById(int id)
         {
             return context.People.Include(c=>c.City).SingleOrDefault(i=>i.Id == id);
-            // from cities inner join people on p.city_id = c.id
         }
 
         public void Update(Person person)
         {
-            throw new System.NotImplementedException();
+            context.People.Update(person);
+            context.SaveChanges();
         }
     }
 }
